@@ -239,7 +239,7 @@ let peron = "Aman Mittal";
 
 /* Equality Operators : == vs === */
 
-// const age = '18'; 
+// const age = '18';
 
 // if(age == 18){
 //     console.log('You just became an adult (loose)');
@@ -266,7 +266,7 @@ let peron = "Aman Mittal";
 //     console.log('7 is also a cool number');
 // }
 // else{
-//     console.log('Number is not 23 or 7');   
+//     console.log('Number is not 23 or 7');
 // }
 
 /* Logical Operators */
@@ -298,4 +298,266 @@ let peron = "Aman Mittal";
 //     console.log('Someone should have drive');
 // }
 
+// let n = 6;
+// for (let i = 1; i <= n; i++) {
+//   if (i % 2 == 0) {
+//     console.log(i + ":" + "even");
+//   } else {
+//     console.log(i + ":" + "odd");
+//   }
+// }
 
+// n = 10;
+// for (let i = 1; i <= 10; i++) {
+//   if (n % i == 0) {
+//     console.log(i);
+//   }
+// }
+
+// n = 5;
+// for (let i = 1; i <= n; i++) {
+//   if (i % 2 == 0) {
+//     console.log("Square of " + i + " = " + i ** 2 + " : " + "even");
+//   }
+//   else{
+//     console.log("Square of " + i + " = " + i ** 2 + " : " + "odd");
+//   }
+// }
+
+// n = 88;
+// if(n >= 75){
+//     console.log('Good');
+// }
+// else if(n < 75 && n >= 50){
+//     console.log('Average');
+// }
+// else{
+//     console.log('Poor')
+// }
+
+// let n = 3;
+// str = '';
+// for(let i = 1; i <= n; i++){
+//     if(i % 2 != 0)
+//         str = str + 'X';
+//     else
+//         str = str + 'Y';
+//     console.log(str);
+// }
+
+// let n = 10;
+// let a = 'A';
+// let ansStr = '';
+// let j = 0;
+// for(let i = 0; i < n; i++){
+//     if(i % 3 == 0){
+//         a = 'A';
+//         j = 0;
+//     }
+//     let code = a.charCodeAt()+j;
+//     ansStr = ansStr + String.fromCharCode(code);
+//     j++;
+// }
+
+// console.log(ansStr);
+
+// let n = 4;
+// let char = "P";
+// let ansStr = "";
+// let j = 0;
+// for (let i = 0; i < n; i++) {
+//   if (i % 3 == 0) {
+//     char = "P";
+//     j = 0;
+//   }
+//   let code = char.charCodeAt() + j;
+//   ansStr = ansStr + String.fromCharCode(code) + (i + 1);
+//   j++;
+// }
+// console.log(ansStr);
+
+// let n = 9;
+// let ansStr = '';
+// for(let i = 1; i <= n; i++){
+//     if(i % 2 == 0){
+//         ansStr = ansStr + '#';
+//     }
+//     else{
+//         ansStr = ansStr + i;
+//     }
+// }
+
+// console.log(ansStr);
+
+// let n = 6;
+// let ansStr = "";
+// for (let i = 1; i <= n; i++) {
+//   if (i % 2 != 0) {
+//     ansStr = ansStr + "-" + i;
+//   } else {
+//     ansStr = ansStr + "+" + i;
+//   }
+// }
+
+// console.log(ansStr);
+
+// let n = 6;
+// let ansStr = "";
+// let sum = 0;
+// for (let i = 1; i <= n; i++) {
+//   if (i % 2 != 0) {
+//     ansStr = ansStr + "-" + i;
+//     sum = sum - i;
+//   } else {
+//     ansStr = ansStr + "+" + i;
+//     sum = sum + i;
+//   }
+// }
+
+// console.log(ansStr + "=" + sum);
+
+// let n = 7;
+// let ansStr = '';
+// for(let i = n; i > 0; i--){
+//     if(i % 3 == 0){
+//         ansStr = ansStr + 'x';
+//     }
+//     else{
+//         ansStr = ansStr + i;
+//     }
+// }
+// console.log(ansStr);
+
+// let n = 9;
+// let divide = '';
+// let notDivide = '';
+// for(let i = 1; i <= n; i++){
+//     if(n % i == 0){
+//         divide = divide + i + '#';
+//     }
+//     else{
+//         notDivide = notDivide + i + '#';
+//     }
+// }
+
+// console.log('Divide: '+divide);
+// console.log('Not Divide: '+notDivide);
+
+// let n = 9999;
+// let sum = 0;
+// for(let i = n; i > 0; i = Math.floor(i / 10)){
+//     let rem = i % 10;
+//     sum = sum + rem;
+// }
+// console.log(sum);
+
+// let str = 'az+bz=4';
+// let c = str.length;
+// str = str.replace('z','x');
+// console.log(str);
+// console.log(c);
+
+// let str = 'JavaMasters';
+// let c = str.length
+// let newStr = '';
+// for(let i = 0; i < c; i++){
+//     if(i % 2 === 0){
+//         newStr = newStr + str[i];
+//     }
+// }
+
+// console.log(newStr);
+
+// let str = 'qw2B**5g';
+// let newStr = '';
+// let c = str.length;
+// for(let i = 0; i < c; i++){
+//     let code = str[i].charCodeAt();
+//     if(code >= 97 && code <= 122 || code >=65 && code <= 90){
+//         newStr = newStr + str[i] + str[i];
+//     }
+//     else if(code >= 48 && code <= 57){
+//         newStr = newStr + str[i] + str[i] + str[i];
+//     }
+//     else{
+//         continue;
+//     }
+// }
+// console.log(newStr);
+
+// let str = '123123';
+// let len = str.length;
+// console.log(len/2-1)
+// let c = str[len/2];
+// console.log(c)
+// let str1 = str.substring(0,len/2);
+// let str2 = str.substring(len/2,len);
+// if(str1 === str2){
+//     console.log('Yes');
+// }
+// else{
+//     console.log('No');
+// }
+
+// let str = 'ABCDE';
+// let len = str.length;
+
+// if(len % 2 === 0){
+//     let mid = len/2-1;
+//     console.log(str[mid]);
+// }
+
+    // let mid = (len-1)/2;
+    // console.log(str[mid])
+
+// let str = 'A1B2C3';
+// let len = str.length;
+// let even = '';
+// let odd = '';
+// for(let i = 0; i < len; i++){
+//     if(i % 2 == 0){
+//         even = even + str[i];
+//     }
+//     else{
+//         odd = odd + str[i];
+//     }
+// }
+// console.log("Odd :"+ odd +" Even :" + even)
+
+// let str = 'AAXXXBBYYYCXXDYY';
+// let len = str.length;
+// let ansStr = '';
+// let c = 0;
+// while(c < len){
+//     if(str[c] == 'X' && str[c+1] == 'X'){
+//         c = c + 2;
+//         continue;
+//     }
+//     else if(str[c] == 'Y' && str[c+1] == 'Y'){
+//         c = c + 2;
+//         continue;
+//     }
+//     else{
+//         ansStr = ansStr + str[c];
+//         c++;
+//     }
+// }
+
+// console.log(ansStr);
+
+// let str1 = 'ABCDABCDABCD';
+// let str1 = 'AB ABC ABCD ABCD ABC AB'
+// let len1 = str1.length;
+// let c1 = 0;
+// let count = 0;
+// while(c1 < len1){
+
+//     if(str1[c1] =='A' && str1[c1+1] =='B' && str1[c1+2] == 'C' && str1[c1+3] == 'D'){
+//         count = count+1;
+//         c1 = c1 + 4;
+//     }
+//     else{
+//         c1++;
+//     }
+// }
+// console.log(count);
