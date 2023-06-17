@@ -561,3 +561,165 @@ let peron = "Aman Mittal";
 //     }
 // }
 // console.log(count);
+
+// let str = '))a+b((';
+// let leftBracket = []
+// let rightBracket = []
+// for(let i = 0; i < str.length; i++){
+//     if(str[i] === '('){
+//         leftBracket.push('(')
+//     }
+//     else if(str[i] === ')'){
+//         leftBracket.pop();
+//     }
+//     else{
+//         continue;
+//     }
+// }
+
+// if(leftBracket.length > 0){
+//     console.log('false');
+// }
+// else{
+//     console.log('True');
+// }
+
+// if(rightBracket === leftBracket){
+//     console.log("True");
+// }
+// else{
+//     console.log("False");
+// }
+
+// function greaterChar(str,char1,char2){
+//     let count1 = 0;
+//     let count2 = 0;
+//     for(let i = 0; i < str.length;i++){
+//         if(str[i] === char1){
+//             count1++;
+//         }
+//         else if(str[i] === char2){
+//             count2++;
+//         }
+//     }
+//     if(count1 > count2){
+//         return 1;
+//     }
+//     else if(count1 === count2){
+//         return 0;
+//     }
+//     else{
+//         return -1;
+//     }
+// }
+
+// let ans = greaterChar('moozoom','m','o');
+// console.log(ans);
+
+/* Switch Statement */
+
+// const day = 'monday';
+// const fname = String(prompt("Enter your name"));
+// console.log(fname);
+
+// const day = 'thursday';
+// const day = String(prompt("Enter day"));
+
+// switch(day){
+//     case 'monday':
+//         console.log('Plan Course Structure');
+//         console.log('Go to coding meetup');
+//         break;
+//     case 'tuesday':
+//         console.log('Prepare theory videos');
+//         break;
+//     case 'wednesday':
+//     case 'thursday' :
+//         console.log('Write code examples');
+//         break;
+//     case 'friday':
+//         console.log('Record Videos');
+//         break;
+//     case 'saturday':
+//     case 'sunday'  :
+//         console.log('Enjoy Weekend');
+//         break;
+//     default:
+//         console.log('Not a valid day!');
+// }
+
+// function prime(n){
+//     if(n == 1)
+//         return false;
+//     let prime = true;
+//     for(let i = 2; i < n; i++){
+//         if(n % i === 0){
+//             prime = false;
+//             return prime;
+//         }
+//         else{
+//             prime = true;
+//         }
+//     }
+//     return prime;
+// }
+
+// console.log(prime(5));
+// console.log(prime(49));
+// console.log(prime(97));
+
+/* Ternary Operator */
+
+// const age = 23;
+// age >= 18 ? console.log('Adult'): console.log('Child');
+
+// (`I am ${age >= 18 ? console.log('Adult'): console.log('Child')}`);
+
+
+
+// function stringCount(str,char){
+//     let count = 0;
+//     for(let i = 0; i < str.length; i++){
+//         if(str[i] === char){
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+// let str = 'abracadabra';
+// let maxchar = 0;
+
+// for(let i = 0; i < str.length; i++){
+//     let charCount = stringCount(str,str[i]);
+//     if(maxchar < charCount){
+//         maxchar = charCount
+//     }
+//     else{
+//         continue;
+//     }
+// }
+
+// console.log(maxchar);
+
+// let charArr = new Array(26);
+
+// for(let i = 0; i < 26; i++){
+//     charArr[i] = 0;
+// }
+
+// for(let i = 0; i < str.length; i++){
+//     let char = str[i].charCodeAt();
+//     let code = char - 97;
+//     charArr[code] = charArr[code] + 1;
+// }
+
+// let max = Number.MIN_VALUE;
+
+// for(let i = 0; i < 26; i++){
+//     if(max < charArr[i]){
+//         max = charArr[i];
+//     }
+// }
+// console.log(max);
+
+
