@@ -321,33 +321,186 @@
 
 /* Object Methods */
 
-const aman = {
-  firstName: "Aman",
-  lastName: "Mittal",
-  birthYear: 1999,
-  job: "Engineer",
-  friends: ["Vishesh", "Vipul", "Devansh"],
-  hasDriverLicense: false,
-  // caclAge: function(birthYear){
-  //   return 2037 - birthYear;
-  // }
-  caclAge: function () {
-    // console.log(this);
-    // return 2037 - this.birthYear;
-    this.age = 2017 - this.birthYear;
-    return this.age;
-  },
-  print: function () {
-    console.log(
-      `${this.firstName} is a ${aman["caclAge"]()} years old ${
-        this.job
-      }, and he has ${this.hasDriverLicense ? "a" : "not"} drivers license`
-    );
-  },
-};
+// const aman = {
+//   firstName: "Aman",
+//   lastName: "Mittal",
+//   birthYear: 1999,
+//   job: "Engineer",
+//   friends: ["Vishesh", "Vipul", "Devansh"],
+//   hasDriverLicense: false,
+//   // caclAge: function(birthYear){
+//   //   return 2037 - birthYear;
+//   // }
+//   caclAge: function () {
+//     // console.log(this);
+//     // return 2037 - this.birthYear;
+//     this.age = 2017 - this.birthYear;
+//     return this.age;
+//   },
+//   print: function () {
+//     console.log(
+//       `${this.firstName} is a ${aman["caclAge"]()} years old ${
+//         this.job
+//       }, and he has ${this.hasDriverLicense ? "a" : "not"} drivers license`
+//     );
+//   },
+// };
 
-console.log(aman["caclAge"]());
-console.log(aman["caclAge"]());
-console.log(aman.age);
-aman["print"]();
+// console.log(aman["caclAge"]());
+// console.log(aman["caclAge"]());
+// console.log(aman.age);
+// aman["print"]();
 // Challenge
+// let mark = {
+//     fullName: "Mark Miller",
+//     mass    : 78,
+//     height  :1.69,
+//     calcBMI : function(){
+//         this.bmi = this.mass/(this.height*this.height);
+//         return this.bmi;
+//     }
+// };
+
+// let john = {
+//     fullName: "John Smith",
+//     mass    : 92,
+//     height  : 1.95,
+//     calcBMI : function(){
+//         this.bmi = this.mass/(this.height*this.height);
+//         return this.bmi;
+//     }
+// }
+
+// mark.calcBMI();
+// john.calcBMI();
+
+// if(john.bmi > mark.bmi){
+//     console.log(`${john['fullName']}'s BMI (${john.bmi}) is higher than ${mark['fullName']}'s (${mark.bmi})!`);
+// }
+// else{
+//     console.log(`${mark['fullName']}'s BMI (${mark.bmi}) is higher than ${john['fullName']}'s (${john.bmi})!`);
+// }
+
+/* Iteration: The For Loop */
+
+// console.log('Lifting weights repitition 1');
+// console.log('Lifting weights repitition 1');
+// console.log('Lifting weights repitition 1');
+// console.log('Lifting weights repitition 1');
+// console.log('Lifting weights repitition 1');
+// console.log('Lifting weights repitition 1');
+// console.log('Lifting weights repitition 1');
+// console.log('Lifting weights repitition 1');
+// console.log('Lifting weights repitition 1');
+
+// for(let i = 1; i <= 10; i++){
+//   console.log('Lifting weights repitition '+i )
+// }
+
+/* Looping Arrays: Breaking and Continuing */
+
+// const amanArray = [
+//   "Aman",
+//   "Mittal",
+//   2037 - 1999,
+//   "Engineer",
+//   ["Vishesh", "Vipul", "Shivam"],
+//   true,
+// ];
+
+// const types = [];
+
+// for (let i = 0; i < amanArray.length; i++) {
+//   console.log(amanArray[i]);
+//   types.push(typeof amanArray[i]);
+// }
+
+// console.log(types);
+
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+// for (let i = 0; i < years.length; i++) {
+//   ages.push(2037 - years[i]);
+// }
+
+// console.log(ages);
+
+/* continue and break */
+
+// for (let i = 0; i < amanArray.length; i++) {
+//   if (typeof amanArray[i] !== "string") continue;
+//   else console.log(amanArray[i], typeof amanArray[i]);
+// }
+
+// for (let i = 0; i < amanArray.length; i++) {
+//   if (typeof amanArray[i] === "number") {
+//     console.log(amanArray[i], typeof amanArray[i]);
+//     break;
+//   } else console.log(amanArray[i], typeof amanArray[i]);
+// }
+
+/* Lopping Backward and loops in loops */
+
+// const amanArray = [
+//   "Aman",
+//   "Mittal",
+//   2037 - 1999,
+//   "Engineer",
+//   ["Vishesh", "Vipul", "Shivam"],
+//   true,
+// ];
+
+// for(let i = amanArray.length-1; i >= 0; i--){
+//   console.log(amanArray[i]);
+// }
+
+// for(let i = 1; i <= 3; i++){
+//   console.log(`Starting Exercise ${i}`)
+//   for(let j = 1; j <= 5; j++){
+//     console.log(`Exercise ${i} Lifting weight repitition ${j} 🏋️‍♀️`)
+//   }
+// }
+
+/* The while loop */
+
+// let i = 1;
+// while(i <= 10){
+//   console.log( `Lifting weights repition ${i}`);
+//   i++;
+// }
+
+let dice = Math.trunc(Math.random() * 6)+1;
+
+while(dice !== 6){
+  console.log(`You rolled ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if(dice === 6){
+    console.log('Loop is about to end ');
+  }
+}
+
+
+/* Challenge */
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+const calcTip = (bill) =>{
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+
+const calcAverage = (arr) =>{
+  let sum = 0;
+  for(let i = 0; i < arr.length; i++){
+    sum = sum + arr[i];
+  }
+  return sum / arr.length;
+}
+
+for(let i = 0; i < bills.length; i++){
+  tips.push(calcTip(bills[i]));
+  totals.push(bills[i]+tips[i])
+}
+console.log(bills,tips,totals)
+console.log(calcAverage(totals))
