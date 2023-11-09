@@ -502,5 +502,21 @@ for(let i = 0; i < bills.length; i++){
   tips.push(calcTip(bills[i]));
   totals.push(bills[i]+tips[i])
 }
-console.log(bills,tips,totals)
-console.log(calcAverage(totals))
+console.log(bills,tips,totals); 
+console.log(calcAverage(totals));
+
+const measureKelvin = function(){
+  const measurement = {
+    type: 'temp',
+    unit: 'celsius',
+    value: prompt('Degree Celsius')
+  }
+
+  console.log(typeof measurement.value);
+  console.log('Aman Mittal');
+  console.log(measurement);
+  const kelvin = Number(measurement.value) + 273;
+  return kelvin
+}
+
+console.log(measureKelvin());
