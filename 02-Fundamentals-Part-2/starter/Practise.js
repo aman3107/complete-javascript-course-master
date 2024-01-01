@@ -360,3 +360,33 @@
 //     console.log(`Loop is about to end`);
 //   }
 // }
+
+/* Challenge */
+
+// const calcTip = function (bill) {
+//   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// };
+
+// let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// let tips = [];
+// let totals = [];
+
+// for (let i = 0; i < bills.length; i++) {
+//   tips.push(calcTip(bills[i]));
+// }
+
+// for (let i = 0; i < bills.length; i++) {
+//   totals.push(bills[i] + tips[i]);
+// }
+
+// const calcAverage = function (totalsArray) {
+//   let sum = 0;
+//   for (let i = 0; i < totalsArray.length; i++) {
+//     sum = sum + totalsArray[i];
+//   }
+//   return sum / totalsArray.length;
+// };
+
+// console.log(bills, tips, totals);
+
+// console.log(calcAverage(totals));
