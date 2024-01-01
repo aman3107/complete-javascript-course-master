@@ -335,8 +335,28 @@
 //   console.log(aman[i]);
 // }
 
-for (let i = 1; i <= 3; i++) {
-  for (let j = 1; j <= 5; j++) {
-    console.log(i, j);
-  }
-}
+// for (let i = 1; i <= 3; i++) {
+//   for (let j = 1; j <= 5; j++) {
+//     console.log(i, j);
+//   }
+// }
+
+/* While Loop */
+
+// let rep = 1;
+// while (rep <= 10) {
+//   console.log(`Lifting weights repetition ${rep}`);
+//   rep++;
+// }
+
+// let dice = Math.trunc(Math.random() * 6) + 1;
+// // let dice2 = Math.random();
+// // console.log(dice2);
+
+// while (dice !== 6) {
+//   console.log(`Dice different from ${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   if (dice === 6) {
+//     console.log(`Loop is about to end`);
+//   }
+// }
