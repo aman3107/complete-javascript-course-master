@@ -322,15 +322,21 @@
 //   console.log(typeof aman[i], aman[i]);
 // }
 
-const aman = [
-  "Aman",
-  "Mittal",
-  2037 - 1999,
-  "Software Engineer",
-  ["Michael", "Steven", "Peter"],
-  true,
-];
+// const aman = [
+//   "Aman",
+//   "Mittal",
+//   2037 - 1999,
+//   "Software Engineer",
+//   ["Michael", "Steven", "Peter"],
+//   true,
+// ];
 
-for (let i = aman.length - 1; i >= 0; i--) {
-  console.log(aman[i]);
+// for (let i = aman.length - 1; i >= 0; i--) {
+//   console.log(aman[i]);
+// }
+
+for (let i = 1; i <= 3; i++) {
+  for (let j = 1; j <= 5; j++) {
+    console.log(i, j);
+  }
 }
