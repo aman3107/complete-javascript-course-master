@@ -22,6 +22,8 @@ const calcTempAmplitude = function (temprature) {
   return ans;
 };
 
+let temprature3 = temprature.concat(temprature2);
 console.log(calcTempAmplitude(temprature));
 
 console.log(calcTempAmplitude(temprature2));
+console.log(calcTempAmplitude(temprature3));
