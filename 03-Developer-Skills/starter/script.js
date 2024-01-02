@@ -4,6 +4,8 @@
 const x = 23;
 
 const temprature = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
+const temprature2 = [3, -2, -6, -1, "error", 9, 13, 17, 17, 14, 9, 5];
+
 let max = temprature[0];
 
 const calcTempAmplitude = function (temprature) {
@@ -18,3 +20,5 @@ const calcTempAmplitude = function (temprature) {
 };
 
 console.log(calcTempAmplitude(temprature));
+
+console.log(calcTempAmplitude(temprature2));
