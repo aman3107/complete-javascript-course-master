@@ -12,15 +12,37 @@ const current1El = document.querySelector('#current--1');
 const playerActive0El = document.querySelector('.player--0');
 const playerActive1El = document.querySelector('.player--1');
 // let currentPlayer0 = playerActive0El.classList.contains('player--active');
-let currentScore = 0;
+let currentScore, activePlayer;
+let scores = new Array();
 // let currentScore1 = 0;
-let activePlayer = 0;
-const scores = [0, 0];
+// let activePlayer = 0;
+// let scores = [0, 0];
 
 // Initial value of both players
 score0El.textContent = 0;
 score1El.textContent = 0;
 diceEl.classList.add('hidden');
+
+const init = function () {
+  currentScore = 0;
+  activePlayer = 0;
+  scores = [0, 0];
+
+  // Initial value of both players
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+  diceEl.classList.add('hidden');
+  playerActive0El.classList.remove('player--winner');
+  playerActive1El.classList.remove('player--winner');
+  playerActive0El.classList.add('player--active');
+  playerActive1El.classList.remove('player--active');
+  btnRoll.disabled = false;
+  btnHold.disabled = false;
+  scores = [0, 0];
+};
+init();
 
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -76,7 +98,7 @@ btnHold.addEventListener('click', function () {
   scores[activePlayer] += currentScore;
   document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer];
-  if (scores[activePlayer] >= 10) {
+  if (scores[activePlayer] >= 100) {
     diceEl.classList.add('hidden');
     btnRoll.disabled = true;
     btnHold.disabled = true;
@@ -90,3 +112,5 @@ btnHold.addEventListener('click', function () {
     switchPlayer();
   }
 });
+
+btnNew.addEventListener('click', init);
