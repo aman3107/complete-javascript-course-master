@@ -1,6 +1,21 @@
 'use strict';
 
-console.log('hello world');
+const weekdDays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekdDays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdDays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdDays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
 
 const restaurant = {
   name: 'Classico Italiano',
@@ -9,23 +24,16 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  // ES6 enhanced object literals
+  openingHours,
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
+
+  orderAman(...amanmenu) {
+    console.log(amanmenu);
   },
+
   orderDelivery: function ({
     startIndex = 1,
     mainIndex = 0,
@@ -43,31 +51,104 @@ const restaurant = {
   },
 };
 
-/* Short Circuting (&& and ||) */
-console.log('--------------OR --------------');
-console.log(3 || 'Jonas');
-console.log('' || 'Jonas');
-console.log(true || 0);
-console.log(undefined || null);
-console.log(undefined || null || 0 || '' || 'Hello' || true || 1);
+/* Optional chaining (?) */
 
-restaurant.numGuest = 23;
-const guest1 = restaurant.numGuest ? restaurant.numGuest : 10;
-console.log(guest1);
-
-const guest2 = restaurant.numGuest || 10;
-console.log(guest2);
-console.log('-------------- AND --------------');
-
-console.log(0 && 'Jonas');
-console.log(7 && 'Jonas');
-console.log('Hello' && 23 && null && 'Jonas');
-
-if (restaurant.orderPizza) {
-  restaurant.orderPizza('mushrooms', 'spinach');
+if (restaurant.openingHours && restaurant.openingHours.fri) {
+  console.log(restaurant.openingHours.fri.open);
+}
+const Days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of Days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day} will open on ${open}`);
 }
 
-restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+// console.log(restaurant.openingHours.mon.open);
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+// restaurant.orderAman(...restaurant.starterMenu);
+
+/* Looping Arrays: The for-of loop */
+
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
+
+// for (const item of menu) {
+//   console.log(item);
+// }
+
+// for (const item of menu.entries()) {
+//   console.log(item);
+// }
+
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}: ${el}`);
+// }
+// /* Logical Assignment Operators */
+
+// const rest1 = {
+//   name: 'Capri',
+//   numGuests: 0,
+// };
+
+// const rest2 = {
+//   name: 'La Piazza',
+//   Owner: 'Giovanni Rossi',
+// };
+
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+// OR Logical Assignment Operator
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 20;
+
+// Nullish Logical Assignment Operator
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 20;
+
+// rest2.Owner = rest2.Owner && '<ANONYMOUS>';
+// rest1.Owner = rest1.Owner && '<ANONYMOUS>';
+
+/* AND Logical Assignment Operator */
+// rest2.Owner &&= '<ANONYMOUS>';
+// rest1.Owner &&= '<ANONYMOUS>';
+
+// console.log(rest1);
+// console.log(rest2);
+/* The Nullish Coalescing Operator */
+
+// restaurant.numGuests = 0;
+// const guests = restaurant.numGuests || 10;
+// console.log(guests);
+
+// const guests1 = restaurant.numGuests ?? 10;
+// console.log(guests1);
+
+/* Short Circuting (&& and ||) */
+// console.log('--------------OR --------------');
+// console.log(3 || 'Jonas');
+// console.log('' || 'Jonas');
+// console.log(true || 0);
+// console.log(undefined || null);
+// console.log(undefined || null || 0 || '' || 'Hello' || true || 1);
+
+// restaurant.numGuest = 23;
+// const guest1 = restaurant.numGuest ? restaurant.numGuest : 10;
+// console.log(guest1);
+
+// const guest2 = restaurant.numGuest || 10;
+// console.log(guest2);
+// console.log('-------------- AND --------------');
+
+// console.log(0 && 'Jonas');
+// console.log(7 && 'Jonas');
+// console.log('Hello' && 23 && null && 'Jonas');
+
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('mushrooms', 'spinach');
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
 /* Rest Pattern and Parameters */
 
