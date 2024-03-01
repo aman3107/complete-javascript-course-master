@@ -51,6 +51,68 @@ const restaurant = {
   },
 };
 
+/* Maps */
+
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenzy Italy');
+rest.set(2, 'Lisbon Portugal');
+console.log(rest);
+
+rest
+  .set('categories', ['Itilian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open')
+  .set(false, 'We are close');
+// console.log(rest);
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+rest.delete(2);
+console.log(rest);
+console.log(rest.size);
+const arr = [1, 2];
+rest.set(arr, 20);
+console.log(rest);
+console.log(rest.get(arr));
+// rest.clear();
+// console.log(rest);
+/* Sets */
+
+// const orderSet = new Set([
+//   'Pizza',
+//   'Pasta',
+//   'Pizza',
+//   'Risotto',
+//   'Pasta',
+//   'Pizza',
+// ]);
+// console.log(new Set('Aman'));
+// console.log(orderSet);
+// console.log(orderSet.size);
+// console.log(orderSet.has('Pizza'));
+// console.log(orderSet.has('Bread'));
+// orderSet.add('Garlic Bread');
+// console.log(orderSet);
+// orderSet.delete('Pizza');
+// console.log(orderSet);
+// for (const value of orderSet) {
+//   console.log(value);
+// }
+
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+// const stuffUnique = [...new Set(staff)];
+// console.log(stuffUnique);
+
+// orderSet.clear();
+// console.log(orderSet);
+
 /* Looping Objects */
 
 // Property Names
