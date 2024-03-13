@@ -51,72 +51,118 @@ const restaurant = {
   },
 };
 
+/* Working with Strings - Part 3 */
+
+// Split and Join
+console.log('a+very+nice+string'.split('+'));
+console.log('Aman Mittal'.split(' '));
+
+const [firstName, lastName] = 'Aman Mittal'.split(' ');
+console.log(firstName, lastName);
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (names) {
+  const namesArray = names.split(' ');
+  for (let i = 0; i < namesArray.length; i++) {
+    namesArray[i] = [
+      namesArray[i][0].toUpperCase(),
+      namesArray[i].slice(1).toLowerCase(),
+    ].join('');
+  }
+  console.log(namesArray);
+};
+
+capitalizeName('aman payal kajal shIvA');
+
+// Padding
+
+console.log('Aman Mittal'.padStart(20, '+').padEnd(30, '+'));
+console.log('Aman Mittal Papa'.padStart(20, '+').padEnd(30, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(19456709210));
+
+const message = 'Bad Weather.. All Departures Delayed ..';
+console.log(message.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'✈️'.repeat(n)}`);
+};
+
+planesInLine(12);
 /* Working with Srings Part - 2 */
 
-const airplane = 'TAP Air Portugal';
+// const airplane = 'TAP Air Portugal';
 
-console.log(airplane.toLowerCase());
-console.log(airplane.toUpperCase());
+// console.log(airplane.toLowerCase());
+// console.log(airplane.toUpperCase());
 
-const checkCase = function (str) {
-  let strLower = str.toLowerCase();
-  str = strLower[0].toUpperCase() + strLower.slice(1);
-  return str;
-};
-console.log(checkCase('aMaN'));
-console.log(checkCase('jOnAs'));
+// const checkCase = function (str) {
+//   let strLower = str.toLowerCase();
+//   str = strLower[0].toUpperCase() + strLower.slice(1);
+//   return str;
+// };
+// console.log(checkCase('aMaN'));
+// console.log(checkCase('jOnAs'));
 
-let passenger = 'jOnAs';
-const passengerLower = passenger.toLowerCase();
-passenger = passengerLower[0].toUpperCase() + passengerLower.slice(1);
-console.log(passenger);
+// let passenger = 'jOnAs';
+// const passengerLower = passenger.toLowerCase();
+// passenger = passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passenger);
 
 // Check Email
 
-const email = 'hello@jonas.io';
-const login = '  Hello@Jonas.io  \n';
+// const email = 'hello@jonas.io';
+// const login = '  Hello@Jonas.io  \n';
 // const lowerMail = login.toLowerCase();
 // const trimmedEmail = lowerMail.trim();
 // console.log(trimmedEmail);
 
-const normalizedEmail = login.toLowerCase().trim();
-console.log(normalizedEmail);
+// const normalizedEmail = login.toLowerCase().trim();
+// console.log(normalizedEmail);
 
 // replacing
 
-const priceGB = '287,97&';
-const priceUS = priceGB.replace('&', '$').replace(',', '.');
-console.log(priceUS);
+// const priceGB = '287,97&';
+// const priceUS = priceGB.replace('&', '$').replace(',', '.');
+// console.log(priceUS);
 
-const announcement =
-  'All passengers come to boarding door 23! come to boarding door 23';
+// const announcement =
+//   'All passengers come to boarding door 23! come to boarding door 23';
 
-console.log(announcement.replaceAll('door', 'gate'));
-console.log(announcement.replace(/door/g, 'gate'));
+// console.log(announcement.replaceAll('door', 'gate'));
+// console.log(announcement.replace(/door/g, 'gate'));
 
 // Booleans
 
-const plane = 'Airbus A320neo';
-console.log(plane.includes('A320'));
-console.log(plane.startsWith('Air'));
-console.log(plane.endsWith('eo'));
+// const plane = 'Airbus A320neo';
+// console.log(plane.includes('A320'));
+// console.log(plane.startsWith('Air'));
+// console.log(plane.endsWith('eo'));
 
-if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
-  console.log('Part of the new Airbus Family');
-}
+// if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+//   console.log('Part of the new Airbus Family');
+// }
 
-const checkBaggage = function (items) {
-  const baggage = items.toLowerCase();
-  if (baggage.includes('knife') || baggage.includes('gun')) {
-    console.log('You are not allowed to board on plane');
-  } else {
-    console.log('You are allowed');
-  }
-};
+// const checkBaggage = function (items) {
+//   const baggage = items.toLowerCase();
+//   if (baggage.includes('knife') || baggage.includes('gun')) {
+//     console.log('You are not allowed to board on plane');
+//   } else {
+//     console.log('You are allowed');
+//   }
+// };
 
-checkBaggage('I have a laptop, some Food and a pocket Knife');
-checkBaggage('Socks and camera');
-checkBaggage('Got some snacks and a gun for protection');
+// checkBaggage('I have a laptop, some Food and a pocket Knife');
+// checkBaggage('Socks and camera');
+// checkBaggage('Got some snacks and a gun for protection');
 
 /* Working with Strings - Part 1 */
 
