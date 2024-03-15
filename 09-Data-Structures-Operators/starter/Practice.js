@@ -102,7 +102,7 @@ planesInLine(12);
 // const airplane = 'TAP Air Portugal';
 
 // console.log(airplane.toLowerCase());
-// console.log(airplane.toUpperCase());
+// console.log(airplane.toUpperCase()); 
 
 // const checkCase = function (str) {
 //   let strLower = str.toLowerCase();
