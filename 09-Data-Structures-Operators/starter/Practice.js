@@ -51,58 +51,75 @@ const restaurant = {
   },
 };
 
+/* Strings Method Practice */
+
+const getCode = str => str.slice(0, 3).toUpperCase();
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+for (const flight of flights.split('+')) {
+  const [type, from, to, time] = flight.split(';');
+  const output = `${type.startsWith('_Delayed') ? '🔴' : ''}${type.replaceAll(
+    '_',
+    ' '
+  )} from ${getCode(from)} to ${getCode(to)} (${time.replace(
+    ':',
+    'h'
+  )})`.padStart(44);
+  console.log(output);
+}
 /* Working with Strings - Part 3 */
 
 // Split and Join
-console.log('a+very+nice+string'.split('+'));
-console.log('Aman Mittal'.split(' '));
+// console.log('a+very+nice+string'.split('+'));
+// console.log('Aman Mittal'.split(' '));
 
-const [firstName, lastName] = 'Aman Mittal'.split(' ');
-console.log(firstName, lastName);
+// const [firstName, lastName] = 'Aman Mittal'.split(' ');
+// console.log(firstName, lastName);
 
-const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
-console.log(newName);
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+// console.log(newName);
 
-const capitalizeName = function (names) {
-  const namesArray = names.split(' ');
-  for (let i = 0; i < namesArray.length; i++) {
-    namesArray[i] = [
-      namesArray[i][0].toUpperCase(),
-      namesArray[i].slice(1).toLowerCase(),
-    ].join('');
-  }
-  console.log(namesArray);
-};
+// const capitalizeName = function (names) {
+//   const namesArray = names.split(' ');
+//   for (let i = 0; i < namesArray.length; i++) {
+//     namesArray[i] = [
+//       namesArray[i][0].toUpperCase(),
+//       namesArray[i].slice(1).toLowerCase(),
+//     ].join('');
+//   }
+//   console.log(namesArray);
+// };
 
-capitalizeName('aman payal kajal shIvA');
+// capitalizeName('aman payal kajal shIvA');
 
-// Padding
+// // Padding
 
-console.log('Aman Mittal'.padStart(20, '+').padEnd(30, '+'));
-console.log('Aman Mittal Papa'.padStart(20, '+').padEnd(30, '+'));
+// console.log('Aman Mittal'.padStart(20, '+').padEnd(30, '+'));
+// console.log('Aman Mittal Papa'.padStart(20, '+').padEnd(30, '+'));
 
-const maskCreditCard = function (number) {
-  const str = number + '';
-  const last = str.slice(-4);
-  return last.padStart(str.length, '*');
-};
+// const maskCreditCard = function (number) {
+//   const str = number + '';
+//   const last = str.slice(-4);
+//   return last.padStart(str.length, '*');
+// };
 
-console.log(maskCreditCard(19456709210));
+// console.log(maskCreditCard(19456709210));
 
-const message = 'Bad Weather.. All Departures Delayed ..';
-console.log(message.repeat(5));
+// const message = 'Bad Weather.. All Departures Delayed ..';
+// console.log(message.repeat(5));
 
-const planesInLine = function (n) {
-  console.log(`There are ${n} planes in line ${'✈️'.repeat(n)}`);
-};
+// const planesInLine = function (n) {
+//   console.log(`There are ${n} planes in line ${'✈️'.repeat(n)}`);
+// };
 
-planesInLine(12);
+// planesInLine(12);
 /* Working with Srings Part - 2 */
 
 // const airplane = 'TAP Air Portugal';
 
 // console.log(airplane.toLowerCase());
-// console.log(airplane.toUpperCase()); 
+// console.log(airplane.toUpperCase());
 
 // const checkCase = function (str) {
 //   let strLower = str.toLowerCase();
