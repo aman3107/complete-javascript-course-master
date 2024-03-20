@@ -1,5 +1,5 @@
 'use strict';
-
+// console.log('Hello World');
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // BANKIST APP
@@ -65,12 +65,101 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+//Slice
+// let arr = ['a', 'b', 'c', 'd', 'e'];
+// console.log(arr.slice(2));
+// console.log(arr.slice(2, 4));
+// console.log(arr.slice(-1));
+// console.log(arr.slice(1, -2));
+// console.log(arr.slice());
+// console.log([...arr]);
+
+// Splice
+
+// console.log(arr.splice(0, 2));
+// console.log(arr.splice(-1));
+// console.log(arr);
+// console.log(arr.splice(1, 2));
+// console.log(arr);
+
+// Reverse
+// arr = ['a', 'b', 'c', 'd', 'e'];
+// const arr2 = ['j', 'i', 'h', 'g', 'f'];
+// console.log(arr2.reverse());
+// console.log(arr2);
+
+//Concat
+// const letters = arr.concat(arr2);
+// console.log(letters);
+// console.log([...arr, ...arr2]);
+
+// Join
+// console.log(letters.join('-'));
+
+// The new at Method
+
+// const arr3 = [23, 11, 46];
+// console.log(arr3[0]);
+// console.log(arr3.at(0));
+
+// getting last array element
+// console.log(arr[arr.length - 1]);
+// console.log(arr.slice(-1)[0]);
+// console.log(arr.at(-1));
+// console.log('aman'.at(-1));
+
+/* Looping Arrays: forEach */
+
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// for (const movement of movements) {
+// for (const [i, movement] of movements.entries()) {
+//   if (movement > 0) {
+//     console.log(`Movement ${i + 1} You deposited ${movement}`);
+//   } else {
+//     console.log(`Movement ${i + 1} You withdraw ${Math.abs(movement)}`);
+//   }
+// }
+
+// console.log('--------------- forEach -------------------------');
+// movements.forEach(function (movement, i, arr) {
+//   if (movement > 0) {
+//     console.log(`Movement ${i + 1} You Deposited ${movement}`);
+//   } else {
+//     console.log(`Movement ${i + 1} You withdraw ${Math.abs(movement)}`);
+//   }
+// });
+
+// 0: function(200)
+// 1: function(450)
+
+/* forEach with Maps and Sets */
+
+// Map
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
+
+// currencies.forEach(function (value, key, map) {
+//   console.log(`${key}: ${value}`);
+// });
+
+// Sets
+// const uniqueCurrencies = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+// uniqueCurrencies.forEach(function (value, set) {
+//   console.log(`${value}`);
+// });
+
+/* Project: Bankist App */
