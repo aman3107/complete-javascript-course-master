@@ -1,4 +1,10 @@
 'use strict';
+// const username = user
+//   .toLowerCase()
+//   .split(' ')
+//   .map(value => value.at(0))
+//   .join('');
+// return username;
 // console.log('Hello World');
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -76,6 +82,22 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
+const createUserNames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(value => value.at(0))
+      .join('');
+  });
+};
+createUserNames(accounts);
+
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, curr) => acc + curr, 0);
+  labelBalance.textContent = `${balance}€`;
+};
+calcDisplayBalance(account1.movements);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES

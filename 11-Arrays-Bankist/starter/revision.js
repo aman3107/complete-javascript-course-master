@@ -18,23 +18,23 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
 */
-const dogsJulia = [3, 5, 2, 12, 7];
-const dogsKate = [4, 1, 15, 8, 3];
-const checkDogs = function (dogsJulia, dogsKate) {
-  const newDogsJulia = [...dogsJulia];
-  newDogsJulia.splice(0, 1);
-  newDogsJulia.splice(-2);
-  const allDogsArray = [...newDogsJulia, ...dogsKate];
-  allDogsArray.forEach(function (val, i) {
-    const ans =
-      val >= 3
-        ? `Dog number ${i + 1} is an adult, and is ${val} years old`
-        : `Dog number ${i + 1} is still a puppy 🐶`;
-    console.log(ans);
-  });
-};
+// const dogsJulia = [3, 5, 2, 12, 7];
+// const dogsKate = [4, 1, 15, 8, 3];
+// const checkDogs = function (dogsJulia, dogsKate) {
+//   const newDogsJulia = [...dogsJulia];
+//   newDogsJulia.splice(0, 1);
+//   newDogsJulia.splice(-2);
+//   const allDogsArray = [...newDogsJulia, ...dogsKate];
+//   allDogsArray.forEach(function (val, i) {
+//     const ans =
+//       val >= 3
+//         ? `Dog number ${i + 1} is an adult, and is ${val} years old`
+//         : `Dog number ${i + 1} is still a puppy 🐶`;
+//     console.log(ans);
+//   });
+// };
 
-checkDogs(dogsJulia, dogsKate);
+// checkDogs(dogsJulia, dogsKate);
 
 /* Simple Array Methods */
 
@@ -123,3 +123,69 @@ checkDogs(dogsJulia, dogsKate);
 // currenciesUnique.forEach(function (value, key, map) {
 //   console.log(`${key}: ${value}`);
 // });
+
+/* Map Looping Arrays */
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// const eurToUsd = 1.1;
+// const movementsUSD1 = movements.map(function (value) {
+//   return value * eurToUsd;
+// });
+// const movementsUSD = movements.map(value => value * eurToUsd);
+// console.log(movements);
+// console.log(movementsUSD1);
+// console.log(movementsUSD);
+
+// const movementsDesc = movements.map((mov, i, arr) => {
+//   return `mov ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdraw'} ${Math.abs(
+//     mov
+//   )}`;
+// });
+
+// console.log(movementsDesc);
+
+/* Filter Looping Arrays */
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const deposits = movements.filter(function (val, ind) {
+//   return val > 0;
+// });
+// console.log(deposits);
+// const depositsFor = [];
+// for (const val of movements) {
+//   if (val > 0) {
+//     depositsFor.push(val);
+//   }
+// }
+
+// console.log(depositsFor);
+
+// const withdrawals = movements.filter(val => val < 0);
+// console.log(withdrawals);
+
+/* Reduce Looping Arrays */
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const maximum = movements.reduce((acc, curr) => {
+  if (acc > curr) {
+    return acc;
+  } else {
+    return curr;
+  }
+}, movements.at(0));
+console.log(maximum);
+// console.log(movements);
+// const balance = movements.reduce(function (acc, curr, i, arr) {
+//   console.log(`Iteration ${i} : ${acc}`);
+//   return acc + curr;
+// }, 0);
+
+// console.log(balance);
+
+// let balance2 = 0;
+// for (const mov of movements) {
+//   balance2 += mov;
+// }
+// console.log(balance2);
+
+// const balance3 = movements.reduce((acc, curr) => acc + curr, 0);
+// console.log(balance3);
