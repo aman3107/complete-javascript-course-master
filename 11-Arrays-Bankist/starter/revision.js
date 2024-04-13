@@ -224,7 +224,7 @@ GOOD LUCK 😀
 /* 
 Let's go back to Julia and Kate's study about dogs. This time, they want to convert dog ages to human ages and calculate the average age of the dogs in their study.
 
-Create a function 'calcAverageHumanAge', which accepts an arrays of dog's ages ('ages'), and does the following things in order:
+Create a function 'calcAverageHumanAge', which accepts an array s of dog's ages ('ages'), and does the following things in order:
 
 1. Calculate the dog age in human years using the following formula: if the dog is <= 2 years old, humanAge = 2 * dogAge. If the dog is > 2 years old, humanAge = 16 + dogAge * 4.
 2. Exclude all dogs that are less than 18 human years old (which is the same as keeping dogs that are at least 18 years old)
@@ -286,9 +286,72 @@ const eurToUsd = 1.1;
 
 /* Find Method */
 
-const firstWithdrawal = movements.find(mov => mov < 0);
-console.log(firstWithdrawal);
+// const firstWithdrawal = movements.find(mov => mov < 0);
+// console.log(firstWithdrawal);
 
-console.log(accounts);
-const account = accounts.find(acc => acc.owner === 'Jessica Davis');
-console.log(account);
+// console.log(accounts);
+// const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+// console.log(account);
+
+/* FindIndex Method */
+
+/* Some and Every */
+
+// Equality
+// console.log(movements.includes(-130));
+
+// SOME: Condition
+// const anyDeposit = movements.some(mov => mov > 0);
+// console.log(anyDeposit);
+
+// EVERY: Condition
+
+// console.log(movements.every(mov => mov > 0));
+// console.log(account4.movements.every(mov => mov > 0));
+
+/* Flat and FlatMap */
+
+// const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+// console.log(arr.flat());
+// const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+// console.log(arrDeep.flat(2));
+
+// const accountMovements = accounts.map(acc => acc.movements);
+// const allMovements = accountMovements.flat();
+// console.log(allMovements);
+
+// const overallBalance = allMovements.reduce((acc, curr) => acc + curr, 0);
+
+// flat
+// const overallBalance = accounts
+//   .map(acc => acc.movements)
+//   .flat()
+//   .reduce((acc, curr) => acc + curr, 0);
+
+// console.log(overallBalance);
+
+// flatMap
+// const overallBalance2 = accounts
+//   .flatMap(acc => acc.movements)
+//   .reduce((acc, curr) => acc + curr, 0);
+
+// console.log(overallBalance2);
+
+/* Sort Arrays */
+
+const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+console.log(owners.sort());
+console.log(owners);
+
+// console.log(movements.sort());
+
+// return < 0, A,B (keep Order)
+// return > 0, B,A (swicth Order)
+movements.sort((a, b) => {
+  if (a > b) {
+    return 1;
+  } else {
+    return -1;
+  }
+});
+console.log(movements);

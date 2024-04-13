@@ -177,6 +177,46 @@ btnTransfer.addEventListener('click', function (e) {
 
     transferAccount.movements.push(amount);
   }
+  inputLoanAmount.value = '';
+});
+
+// Loan
+
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+  const amount = Number(inputLoanAmount.value);
+  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    currentAccount.movements.push(amount);
+    updateUI(currentAccount);
+  }
+});
+
+// Close Account
+
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+  // const userIndex = accounts.findIndex(
+  //   acc => acc.username === inputCloseUsername.value
+  // );
+  // if (accounts[userIndex].pin === Number(inputClosePin.value)) {
+  //   accounts.splice(userIndex, 1);
+  // }
+  // inputClosePin.value = inputCloseUsername.value = '';
+  // updateUI();
+
+  if (
+    inputCloseUsername.value === currentAccount.username &&
+    Number(inputClosePin.value) === currentAccount.pin
+  ) {
+    const index = accounts.findIndex(
+      acc => acc.username === currentAccount.username
+    );
+    // Delete Account
+    accounts.splice(index, 1);
+    // Hide UI
+    containerApp.style.opacity = 0;
+  }
+  inputClosePin.value = inputCloseUsername.value = '';
 });
 
 /////////////////////////////////////////////////
