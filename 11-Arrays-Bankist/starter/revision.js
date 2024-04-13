@@ -339,19 +339,52 @@ const eurToUsd = 1.1;
 
 /* Sort Arrays */
 
-const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
-console.log(owners.sort());
-console.log(owners);
+// const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+// console.log(owners.sort());
+// console.log(owners);
 
 // console.log(movements.sort());
 
 // return < 0, A,B (keep Order)
 // return > 0, B,A (swicth Order)
-movements.sort((a, b) => {
-  if (a > b) {
-    return 1;
-  } else {
-    return -1;
-  }
-});
-console.log(movements);
+// Ascending
+// movements.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (b > a) return -1;
+// });
+
+// movements.sort((a, b) => a - b);
+// console.log(movements);
+
+// Descending
+// movements.sort((a, b) => {
+//   if (a > b) return -1;
+//   if (b > a) return 1;
+// });
+// console.log(movements);
+
+/* More Ways of Creating and Filling Arrays */
+
+console.log([1, 2, 3, 4, 5, 6, 7]);
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+const x = new Array(7);
+
+x.map(() => 5);
+// console.log(x);
+x.fill(1, 2, 5);
+console.log(x);
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+arr.fill(23, 2, 4);
+console.log(arr);
+
+// Array.from()
+
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z);
+
+const movementsUI = Array.from(document.querySelectorAll());
