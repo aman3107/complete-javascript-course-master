@@ -365,26 +365,76 @@ const eurToUsd = 1.1;
 
 /* More Ways of Creating and Filling Arrays */
 
-console.log([1, 2, 3, 4, 5, 6, 7]);
-console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+// console.log([1, 2, 3, 4, 5, 6, 7]);
+// console.log(new Array(1, 2, 3, 4, 5, 6, 7));
 
-const x = new Array(7);
+// const x = new Array(7);
 
-x.map(() => 5);
+// x.map(() => 5);
 // console.log(x);
-x.fill(1, 2, 5);
-console.log(x);
+// x.fill(1, 2, 5);
+// console.log(x);
 
-const arr = [1, 2, 3, 4, 5, 6, 7];
-arr.fill(23, 2, 4);
-console.log(arr);
+// const arr = [1, 2, 3, 4, 5, 6, 7];
+// arr.fill(23, 2, 4);
+// console.log(arr);
 
 // Array.from()
 
-const y = Array.from({ length: 7 }, () => 1);
-console.log(y);
+// const y = Array.from({ length: 7 }, () => 1);
+// console.log(y);
 
-const z = Array.from({ length: 7 }, (_, i) => i + 1);
-console.log(z);
+// const z = Array.from({ length: 7 }, (_, i) => i + 1);
+// console.log(z);
 
-const movementsUI = Array.from(document.querySelectorAll());
+// const movementsUI = Array.from(document.querySelectorAll());
+
+/* Array Metods Practice */
+
+// const bankDepositSum = accounts.map(acc => acc.movements).flat();
+
+// 1
+// const bankDepositSum = accounts
+//   .flatMap(acc => acc.movements)
+//   .filter(mov => mov > 0)
+//   .reduce((acc, curr) => acc + curr, 0);
+// console.log(bankDepositSum);
+
+//2
+
+// const numDeposits1000 = accounts
+//   .flatMap(acc => acc.movements)
+//   .reduce((acc, curr) => (curr >= 1000 ? ++acc : acc), 0);
+// .filter(mov => mov > 1000).length;
+
+// console.log(numDeposits1000);
+
+//3
+console.log(accounts.flatMap(acc => acc.movements));
+
+const sums = accounts
+  .flatMap(acc => acc.movements)
+  .reduce(
+    (sums, curr) => {
+      // curr > 0 ? (sums.deposits += curr) : (sums.withdrawals += curr);
+      sums[curr > 0 ? 'deposits' : 'withdrawals'] += curr;
+      return sums;
+    },
+    { deposits: 0, withdrawals: 0 }
+  );
+console.log(sums);
+
+// 4
+// this is a nice title => This Is a Nice Title
+
+const convertTitleCase = function (title) {
+  const capitalize = word => word[0].toUpperCase() + word.slice(1);
+  const exceptions = ['a', 'an', 'the', 'on', 'in', 'with', 'or', 'but', 'and'];
+  const titleCase = title
+    .toLowerCase()
+    .split(' ')
+    .map(word => (exceptions.includes(word) ? word.slice() : capitalize(word)))
+    .join(' ');
+  return capitalize(titleCase);
+};
+console.log(convertTitleCase('and this is a nice title'));
