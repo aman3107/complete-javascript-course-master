@@ -221,35 +221,255 @@
 
 /* Coding Challenge 2 */
 
-class Car {
-  constructor(make, speed) {
-    this.make = make;
-    this.speed = speed;
+// class Car {
+//   constructor(make, speed) {
+//     this.make = make;
+//     this.speed = speed;
+//   }
+
+//   accelerate() {
+//     this.speed += 10;
+//     console.log(`'${this.make}' going at ${this.speed} km/h`);
+//   }
+//   brake() {
+//     this.speed -= 5;
+//     console.log(`'${this.make}' going at ${this.speed} km/h`);
+//   }
+
+//   get speedUS() {
+//     return this.speed / 1.6;
+//   }
+
+//   set speedUS(speed) {
+//     this.speed = speed * 1.6;
+//   }
+// }
+
+// const bmw = new Car('BMW', 100);
+// bmw.brake();
+// console.log(bmw.speedUS);
+// bmw.speedUS = 120;
+// console.log(bmw);
+// console.log(bmw.speedUS);
+
+// bmw.brake();
+
+/* Inheritance Between Classes: Constructor Functions */
+
+// const Person = function (firstName, birthYear) {
+//   this.firstName = firstName;
+//   this.birthYear = birthYear;
+// };
+
+// Person.prototype.calcAge = function () {
+//   console.log(2037 - this.birthYear);
+// };
+
+// const Student = function (firstName, birthYear, course) {
+//   // this.firstName = firstName;
+//   // this.birthYear = birthYear;
+//   Person.call(this, firstName, birthYear);
+//   this.course = course;
+// };
+
+// Student.prototype = Object.create(Person.prototype);
+
+// Student.prototype.introduce = function () {
+//   console.log(`My name is ${this.firstName} and I study ${this.course}`);
+// };
+
+// const mike = new Student('Mike', 2020, 'Computer Science');
+// console.log(mike);
+// mike.introduce();
+// mike.calcAge();
+// console.log(mike.__proto__);
+// console.log(mike.__proto__.__proto__);
+// console.log(mike.__proto__.__proto__.__proto__);
+// console.log(mike.__proto__.__proto__.__proto__.__proto__);
+// console.dir(Student.prototype.constructor);
+
+// console.log(mike instanceof Student);
+// console.log(mike instanceof Person);
+
+// Student.prototype.constructor = Student;
+
+// console.log(mike instanceof Student);
+// console.log(mike instanceof Person);
+
+// mike.calcAge();
+
+/* Challenge 3 */
+
+// const Car = function (make, speed) {
+//   this.make = make;
+//   this.speed = speed;
+// };
+
+// Car.prototype.accelerate = function () {
+//   this.speed += 10;
+//   console.log(`'${this.make}' going at ${this.speed} km/h`);
+// };
+
+// Car.prototype.brake = function () {
+//   this.speed -= 5;
+//   console.log(`'${this.make}' going at ${this.speed} km/h`);
+// };
+
+// const EV = function (make, speed, charge) {
+//   Car.call(this, make, speed);
+//   this.charge = charge;
+// };
+// EV.prototype = Object.create(Car.prototype);
+
+// EV.prototype.chargeBattery = function (chargeTo) {
+//   this.charge = chargeTo;
+// };
+
+// EV.prototype.accelerate = function () {
+//   this.speed += 20;
+//   this.charge -= 1;
+//   console.log(
+//     `${this.make} going at ${this.speed}km/h, with a charge of ${this.charge}%`
+//   );
+// };
+
+// const tesla = new EV('Tesla', 110, 95);
+// console.log(tesla);
+// tesla.accelerate();
+// tesla.chargeBattery(98);
+// tesla.accelerate();
+// tesla.brake();
+
+/* Inheritance Between Classes: ES6 classes */
+
+// class PersonCl {
+//   constructor(fullName, birthYear) {
+//     this.fullName = fullName;
+//     this.birthYear = birthYear;
+//   }
+
+//   calcAge() {
+//     console.log(2037 - this.birthYear);
+//   }
+//   greet() {
+//     console.log(`Hey ${this.fullName}`);
+//   }
+
+//   get age() {
+//     return 2037 - this.birthYear;
+//   }
+
+//   set fullName(name) {
+//     if (name.includes(' ')) this._fullName = name;
+//     else alert(`${name} is not a full name`);
+//   }
+
+//   get fullName() {
+//     return this._fullName;
+//   }
+
+//   static hey() {
+//     console.log(`hey there!`);
+//   }
+// }
+
+// class Student extends PersonCl {
+//   constructor(fullName, birthYear, course) {
+//     // Always needs to happen first
+//     super(fullName, birthYear);
+//     this.course = course;
+//   }
+
+//   introduce() {
+//     console.log(`My name is ${this.fullName} and I study ${this.course}`);
+//   }
+
+//   calcAge() {
+//     console.log(
+//       `I am ${
+//         2037 - this.birthYear
+//       } years old but as a student I feel more like ${
+//         2037 - this.birthYear + 10
+//       } `
+//     );
+//   }
+// }
+
+// const martha = new Student('Martha Jones', 2022, 'Computer Science');
+// martha.introduce();
+// martha.calcAge();
+// console.log(martha.age);
+
+/* Inheritance Between Classes: Object.create */
+
+// const PersonProto = {
+//   calcAge() {
+//     console.log(2037 - this.birthYear);
+//   },
+
+//   init(firstName, birthYear) {
+//     this.firstName = firstName;
+//     this.birthYear = birthYear;
+//   },
+// };
+
+// const StudentProto = Object.create(PersonProto);
+// const jay = Object.create(StudentProto);
+
+// StudentProto.init = function (firstName, birthYear, course) {
+//   PersonProto.init.call(this, firstName, birthYear);
+//   this.course = course;
+// };
+
+// jay.init('Jay', 2010, 'Computer Science');
+// jay.calcAge();
+
+// StudentProto.introduce = function () {
+//   console.log(`My name is ${this.firstName} and I study ${this.course}`);
+// };
+
+// jay.introduce();
+
+/* Another Class Example */
+
+class Account {
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    this.pin = pin;
+    this.movements = [];
+    this.locale = navigator.language;
+
+    console.log(` Thanks for opening an account, ${owner}`);
   }
 
-  accelerate() {
-    this.speed += 10;
-    console.log(`'${this.make}' going at ${this.speed} km/h`);
-  }
-  brake() {
-    this.speed -= 5;
-    console.log(`'${this.make}' going at ${this.speed} km/h`);
+  deposit(value) {
+    this.movements.push(value);
   }
 
-  get speedUS() {
-    return this.speed / 1.6;
+  withdrawl(value) {
+    this.deposit(-value);
   }
 
-  set speedUS(speed) {
-    this.speed = speed * 1.6;
+  approveLoan(val) {
+    return true;
+  }
+  requestLoan(val) {
+    if (this.approveLoan()) {
+      this.deposit(val);
+      console.log(`Loan Approved`);
+    }
   }
 }
 
-const bmw = new Car('BMW', 100);
-bmw.brake();
-console.log(bmw.speedUS);
-bmw.speedUS = 120;
-console.log(bmw);
-console.log(bmw.speedUS);
+const account1 = new Account('Jonas', 'EUR', 1111);
+console.log(account1);
 
-// bmw.brake();
+// account1.movements.push(250);
+// account1.movements.push(-140);
+
+account1.deposit(250);
+account1.withdrawl(140);
+// account1.pin = 1221;
+account1.requestLoan(1000);
+account1.approveLoan(1000);
