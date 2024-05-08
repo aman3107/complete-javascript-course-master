@@ -432,44 +432,167 @@
 
 /* Another Class Example */
 
-class Account {
-  constructor(owner, currency, pin) {
-    this.owner = owner;
-    this.currency = currency;
-    this.pin = pin;
-    this.movements = [];
-    this.locale = navigator.language;
+// Public Fileds
+// Private Fields
+// Public Methods
+// Private Methods
+// class Account {
+//   // Public Fields(instances)
+//   locale = navigator.language;
+//   currency;
 
-    console.log(` Thanks for opening an account, ${owner}`);
+//   // Private Fileds(instances)
+//   #movements = [];
+//   #pin;
+
+//   constructor(owner, currency, pin) {
+//     this.owner = owner;
+//     this.currency = currency;
+//     this.#pin = pin;
+//     // this._movements = [];
+//     // this.locale = navigator.language;
+
+//     console.log(` Thanks for opening an account, ${owner}`);
+//   }
+
+//   // Public Methods
+//   getMovements() {
+//     return this.#movements;
+//   }
+
+//   deposit(value) {
+//     this.#movements.push(value);
+//     return this;
+//   }
+
+//   withdrawl(value) {
+//     this.deposit(-value);
+//     return this;
+//   }
+
+//   // _approveLoan(val) {
+//   //   return true;
+//   // }
+//   requestLoan(val) {
+//     if (this.#approveLoan()) {
+//       this.deposit(val);
+//       console.log(`Loan Approved`);
+//       return this;
+//     }
+//   }
+
+//   // Private Methods
+//   #approveLoan(val) {
+//     return true;
+//   }
+// }
+
+// const account1 = new Account('Jonas', 'EUR', 1111);
+// console.log(account1);
+
+// // account1.movements.push(250);
+// // account1.movements.push(-140);
+
+// account1.deposit(250);
+// account1.withdrawl(140);
+// // account1.pin = 1221;
+// account1.requestLoan(1000);
+// // account1.approveLoan(1000);
+
+// console.log(account1.getMovements());
+// console.log(account1.#movements);
+// console.log(account1.#pin);
+// console.log(account1.#approveLoan());
+
+/* Chaining Methods */
+
+// account1.deposit(300).deposit(400).withdrawl(35).requestLoan(100);
+// console.log(account1.getMovements());
+
+/* Coding Challenge 4 */
+
+// const Car = function (make, speed) {
+//   this.make = make;
+//   this.speed = speed;
+// };
+
+// Car.prototype.accelerate = function () {
+//   this.speed += 10;
+//   console.log(`'${this.make}' going at ${this.speed} km/h`);
+// };
+
+// Car.prototype.brake = function () {
+//   this.speed -= 5;
+//   console.log(`'${this.make}' going at ${this.speed} km/h`);
+// };
+
+// const EV = function (make, speed, charge) {
+//   Car.call(this, make, speed);
+//   this.charge = charge;
+// };
+// EV.prototype = Object.create(Car.prototype);
+
+// EV.prototype.chargeBattery = function (chargeTo) {
+//   this.charge = chargeTo;
+// };
+
+// EV.prototype.accelerate = function () {
+//   this.speed += 20;
+//   this.charge -= 1;
+//   console.log(
+//     `${this.make} going at ${this.speed}km/h, with a charge of ${this.charge}%`
+//   );
+// };
+
+// const tesla = new EV('Tesla', 110, 95);
+// console.log(tesla);
+// tesla.accelerate();
+// tesla.chargeBattery(98);
+// tesla.accelerate();
+// tesla.brake();
+
+class CarCl {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
   }
 
-  deposit(value) {
-    this.movements.push(value);
+  accelerate() {
+    this.speed += 10;
+    console.log(`'${this.make}' going at ${this.speed} km/h`);
   }
 
-  withdrawl(value) {
-    this.deposit(-value);
-  }
-
-  approveLoan(val) {
-    return true;
-  }
-  requestLoan(val) {
-    if (this.approveLoan()) {
-      this.deposit(val);
-      console.log(`Loan Approved`);
-    }
+  brake() {
+    this.speed -= 5;
+    console.log(`'${this.make}' going at ${this.speed} km/h`);
+    return this;
   }
 }
 
-const account1 = new Account('Jonas', 'EUR', 1111);
-console.log(account1);
+class EVCl extends CarCl {
+  #charge;
+  constructor(make, speed, charge) {
+    super(make, speed);
+    this.#charge = charge;
+  }
 
-// account1.movements.push(250);
-// account1.movements.push(-140);
+  chargeBattery(chargeTo) {
+    this.#charge = chargeTo;
+    return this;
+  }
 
-account1.deposit(250);
-account1.withdrawl(140);
-// account1.pin = 1221;
-account1.requestLoan(1000);
-account1.approveLoan(1000);
+  accelerate() {
+    this.speed += 20;
+    this.#charge -= 1;
+    console.log(
+      `${this.make} going at ${this.speed}km/h, with a charge of ${
+        this.#charge
+      }%`
+    );
+    return this;
+  }
+}
+
+const tesla = new EVCl('tesla', 110, 80);
+console.log(tesla);
+tesla.accelerate().chargeBattery(10).brake().chargeBattery(10).accelerate();
